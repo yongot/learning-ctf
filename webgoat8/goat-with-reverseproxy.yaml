@@ -6,10 +6,10 @@ services:
     hostname: www.webgoat.local
     image: webgoat/webgoat-8.0
     environment:
-      - WEBGOAT_PORT=18080
+      - WEBGOAT_PORT=8080
       - WEBGOAT_SSLENABLED=false
       - WEBWOLF_HOST=webwolf
-      - WEBWOLF_PORT=19090
+      - WEBWOLF_PORT=9090
       - TZ=Asia/Singapore
     volumes:
       - .:/home/webgoat/.webgoat
@@ -23,7 +23,7 @@ services:
     image: webgoat/webwolf
     environment:
       - WEBWOLF_HOST=webwolf
-      - WEBWOLF_PORT=19090
+      - WEBWOLF_PORT=9090
       - TZ=Asia/Singapore
     command: --spring.datasource.url=jdbc:hsqldb:hsql://webgoat:9001/webgoat --server.address=0.0.0.0
     networks:
